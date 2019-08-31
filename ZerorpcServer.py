@@ -7,7 +7,8 @@ from NlpService import ProcessText
 class NlpRpcServer(object):
     def textProcessor(self, text):
         spacyed = ProcessText("en_core_web_sm", text)
-        return json.dumps(spacyed)
+        return spacyed
+        # return json.dumps(spacyed)
         # tokens = spacyed["tokens"]
         # str_tokens = json.dumps(tokens)
         # return str_tokens
