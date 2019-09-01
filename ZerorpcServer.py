@@ -4,7 +4,7 @@ import json
 from NlpService import ProcessText
 
 
-class NlpRpcServer(object):
+class RpcServer(object):
     def textProcessor(self, text):
         spacyed = ProcessText("en_core_web_sm", text)
         return spacyed
@@ -14,6 +14,6 @@ class NlpRpcServer(object):
         # return str_tokens
 
 
-s = zerorpc.Server(NlpRpcServer())
+s = zerorpc.Server(RpcServer())
 s.bind("tcp://127.0.0.1:5828")
 s.run()
