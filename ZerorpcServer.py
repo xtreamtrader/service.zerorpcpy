@@ -8,10 +8,6 @@ class RpcServer(object):
     def textProcessor(self, text):
         spacyed = ProcessText("en_core_web_sm", text)
         return spacyed
-        # return json.dumps(spacyed)
-        # tokens = spacyed["tokens"]
-        # str_tokens = json.dumps(tokens)
-        # return str_tokens
 
 
 s = zerorpc.Server(RpcServer())
