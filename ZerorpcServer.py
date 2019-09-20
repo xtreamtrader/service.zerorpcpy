@@ -11,5 +11,8 @@ class RpcServer(object):
 
 
 s = zerorpc.Server(RpcServer())
-s.bind("tcp://127.0.0.1:5828")
+port = "tcp://127.0.0.1:5828"
+s.bind(port)
+print("zerorpc server is running...")
 s.run()
+
