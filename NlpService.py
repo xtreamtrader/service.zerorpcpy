@@ -53,7 +53,7 @@ def doc2json(doc: spacy.tokens.Doc, model: str):
             "i": token.i,
             "ent_type": token.ent_type_,
             "ent_iob": token.ent_iob_,
-            "lemma": token._.lemma(),
+            "lemma": token.lemma_,
             "norm": token.norm_,
             "lower": token.lower_,
             "shape": token.shape_,
