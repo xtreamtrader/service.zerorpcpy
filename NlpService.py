@@ -3,13 +3,13 @@ import json
 import spacy
 from spacy.tokens import Token
 import lemminflect
-from spacy_readability import Readability
+# from spacy_readability import Readability
 
 
 def ProcessText(model: str, text: str):
     nlp = spacy.load(model)
     nlp.max_length = 3000000
-    nlp.add_pipe(Readability(), last=True)
+    # nlp.add_pipe(Readability(), last=True)
     doc = nlp(text)
     return doc2json(doc, model)
 
@@ -28,7 +28,7 @@ def doc2json(doc: spacy.tokens.Doc, model: str):
         "dale_chall": doc._.dale_chall,
         "smog": doc._.smog,
         "coleman_liau_index": doc._.coleman_liau_index,
-        "automated_readability_index": doc._.automated_readability_index,
+        # "automated_readability_index": doc._.automated_readability_index,
         "forcast": doc._.forcast,
     }
     ents = [
